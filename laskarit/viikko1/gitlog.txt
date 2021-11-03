@@ -1,0 +1,74 @@
+commit 7127ecab56824d66d04b0f5c4409649bcb0f0e6c
+Author: wathero <rolf.wathen@gmail.com>
+Date:   Tue Nov 2 21:06:21 2021 +0200
+
+    no nyt tapahtuu
+
+ eka.txt    | 2 +-
+ kolmas.txt | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+commit fd4e3aa68f44e123d7e00590605cd94f49f5c825
+Author: wathero <rolf.wathen@gmail.com>
+Date:   Tue Nov 2 21:04:14 2021 +0200
+
+    mitä ny tkäy?
+
+ tiedosto.txt => eka.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit e36e64cc64ce3e3c15a0c994f8234a311f82ffad
+Author: wathero <rolf.wathen@gmail.com>
+Date:   Tue Nov 2 21:02:09 2021 +0200
+
+    toinen.txt poistettu
+
+ toinen.txt | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit b3416351e673c59a53a2ab579a0dcd44f8ac7543
+Author: wathero <rolf.wathen@gmail.com>
+Date:   Tue Nov 2 20:56:01 2021 +0200
+
+    ja hakemisto mukaan
+
+ stuff/vielyks.txt | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 3e03b69b3801d9665e612dc9d65d6157ff3e9749
+Author: wathero <rolf.wathen@gmail.com>
+Date:   Tue Nov 2 20:54:41 2021 +0200
+
+    taas muutoksia
+
+ kolmas.txt | 2 +-
+ toinen.txt | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+commit 2c9411ea6871c0addbb6082f6df9126e267efe74
+Author: wathero <rolf.wathen@gmail.com>
+Date:   Tue Nov 2 20:53:17 2021 +0200
+
+    kolmas tiedosto
+
+ kolmas.txt | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 73763a99b469cd74cade03c27e008b07e196bda3
+Author: wathero <rolf.wathen@gmail.com>
+Date:   Tue Nov 2 20:48:19 2021 +0200
+
+    muutos ja lisäys
+
+ tiedosto.txt | 2 +-
+ toinen.txt   | 1 +
+ 2 files changed, 2 insertions(+), 1 deletion(-)
+
+commit 7f2c2a0fb6947547c21756bdc7afa424725c16f2
+Author: wathero <rolf.wathen@gmail.com>
+Date:   Tue Nov 2 20:36:41 2021 +0200
+
+    tiedosto.txt luoto
+
+ tiedosto.txt | 1 +
+ 1 file changed, 1 insertion(+)
