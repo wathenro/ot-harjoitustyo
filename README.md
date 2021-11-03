@@ -7,3 +7,5 @@
 Harjoittelu on sekä *hauskaa* että **hyödyllistä**.
 
 # Kohta on viikko 2
+
+Ja elämä on paljon helpompaa.
