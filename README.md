@@ -9,3 +9,4 @@ Harjoittelu on sekä *hauskaa* että **hyödyllistä**.
 # Kohta on viikko 2
 
 Ja elämä on paljon helpompaa.
+[Työaikakirjanpito](https://github.com/wathenro/ot-harjoitustyo/blob/master/RailwayDesigner/Dokumentaatio/ty%C3%B6aikakirjanpito.md)
