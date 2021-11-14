@@ -11,7 +11,7 @@ Sovellusta voi tässä vaiheessa käyttää kuka tahansa eikä käyttäjiä mite
 ## Käyttöliittymäluonnos
 
 Sovelluksella on tässä vaiheessa vain yksi näkymä. Lisäksi raportti avataan luonnin jälkeen omaan ikkunaansa.
-<img src="https://raw.githubusercontent.com/mluukkai/OtmTodoApp/master/dokumentaatio/kuvat/v-1.png" width="750">
+<img src="https://github.com/wathenro/ot-harjoitustyo/blob/master/RailwayDesigner/Dokumentaatio/kayttoliittymaluonnos.jpg" width="750">
 
 
 ## Perusversion tarjoama toiminnallisuus
