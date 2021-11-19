@@ -1,12 +1,13 @@
-# Tämä on viikko 1
+# Harjoitustyö
 
-[gitlog.txt](https://github.com/wathenro/ot-harjoitustyo/blob/master/laskarit/viikko1/gitlog.txt)
+Harjoitustyö RailwayDesigner rautatielinjausten optimointiin löytyy hakemistosta [https://github.com/wathenro/ot-harjoitustyo/tree/master/RailwayDesigner]
 
-[komentorivi.txt](https://github.com/wathenro/ot-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)
+Harjoitustyön readme.md: 
 
-Harjoittelu on sekä *hauskaa* että **hyödyllistä**.
+# Laskuharjoitukset
 
-# Kohta on viikko 2
+Laskuharjoitukset löytyvät hakemistosta [https://github.com/wathenro/ot-harjoitustyo/tree/master/laskarit]
 
-Ja elämä on paljon helpompaa.
-[Työaikakirjanpito](https://github.com/wathenro/ot-harjoitustyo/blob/master/RailwayDesigner/Dokumentaatio/ty%C3%B6aikakirjanpito.md)
+
+
+
