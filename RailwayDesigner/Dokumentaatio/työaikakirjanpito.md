@@ -8,4 +8,6 @@
 
 20.11 4h  tkinter asennusta ja tutustumista
 
-26.11 5h  Hakee kunnat wikipediasta sijainteineen ja piirtää ne karttaan      
+26.11 5h  Hakee kunnat wikipediasta sijainteineen ja piirtää ne karttaan   
+
+28.11 2h  Pylint asennus, testaus ja korjaus ohjeen mukaan   
