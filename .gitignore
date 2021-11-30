@@ -8,3 +8,5 @@
 /RailwayDesigner/src/__pycache__
 /RailwayDesigner/.coverage
 /RailwayDesigner/htmlcov
+/RailwayDesigner/.coveragerc
+/RailwayDesigner/.pylintrc
