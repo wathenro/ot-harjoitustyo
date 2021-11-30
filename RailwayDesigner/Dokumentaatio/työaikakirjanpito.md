@@ -10,4 +10,8 @@
 
 26.11 5h  Hakee kunnat wikipediasta sijainteineen ja piirtää ne karttaan   
 
-28.11 2h  Pylint asennus, testaus ja korjaus ohjeen mukaan   
+28.11 2h  Pylint asennus, testaus ja korjaus ohjeen mukaan
+
+30.11 8h  Käyttöliittymän uudelleen kirjoitus, piirtää nyt kartat. Tkinter haastava. Pakkauskaavio
+
+Tot. 27h

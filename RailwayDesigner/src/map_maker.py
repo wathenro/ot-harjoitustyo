@@ -2,8 +2,9 @@ from PIL import Image
 import numpy as np
 
 class MapMaker():
-    def _init_(self):
-        pass
+    def __init__(self):
+        self.start_station=""
+        self.end_station=""
     def make_map(self,start_station,end_station,communities):
 
         start_x=min(communities["Longitude"][start_station],communities["Longitude"][end_station])
@@ -18,7 +19,6 @@ class MapMaker():
         for index, row in communities.iterrows():
             if not start_x<= row["Longitude"]<=end_x:
                 communities.drop([index],axis=0,inplace=True)
-                #print(start_x, row["Longitude"],end_x)
                 continue
             if not start_y<= row["Latitude"]<=end_y:
                 communities.drop([index],axis=0,inplace=True)
@@ -29,4 +29,8 @@ class MapMaker():
             y_coord=int(500-y_raw*400)
             created_map[(x_coord-5):(x_coord+5),(y_coord-5):(y_coord+5),0:2]=100
 
-        return Image.fromarray(created_map,"RGB"),communities
+        return created_map,communities
+
+    def make_image(self,created_map):
+        return Image.fromarray(created_map,"RGB")
+        

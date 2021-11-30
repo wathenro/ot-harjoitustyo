@@ -6,6 +6,6 @@ class TestLocLoader(unittest.TestCase):
         self.loader=LocLoader()
 
     def test_location_loader(self):
-        self.assertEqual(self.loader.location_loader()\
-            ["Latitude"]["Pori"], 61.483726303)
+        self.assertEqual(round(self.loader.location_loader()\
+            ["Latitude"]["Pori"],9), 61.483726303)
             
