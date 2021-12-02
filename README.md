@@ -6,9 +6,6 @@ Harjoitustyön readme.md: [https://github.com/wathenro/ot-harjoitustyo/blob/mast
 
 Työaikakirjanpito [https://github.com/wathenro/ot-harjoitustyo/blob/master/RailwayDesigner/Dokumentaatio/ty%C3%B6aikakirjanpito.md]
 
-# Laskuharjoitukset
-
-Laskuharjoitukset löytyvät hakemistosta [https://github.com/wathenro/ot-harjoitustyo/tree/master/laskarit]
 
 
 
