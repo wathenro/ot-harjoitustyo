@@ -22,24 +22,24 @@ class LocLoader():
             communities[["Latitude","Longitude"]]\
                 =communities[["Latitude","Longitude"]].apply(pd.to_numeric, errors='coerce', axis=1)
             #communities.to_csv("./src/data/communities.csv")
-        except:
+        except Exception:
             try:
                 communities=pd.read_csv("src/data/communities.csv",index_col=0,header=0)
-            except:
+            except FileNotFoundError:
                 communities=pd.read_csv("data/communities.csv",index_col=0,header=0)
             print("Did not get from the web, loaded local.")
         communities=self.population_loader(communities)
         return communities
-    
+
     def population_loader(self,communities):
         try:
             population_data=pd.read_csv("src/data/population.csv",encoding="iso8859_10")
-        except:
+        except FileNotFoundError:
             population_data=pd.read_csv("data/population.csv",encoding="iso8859_10")
         population_data.set_index(population_data["Kunta"],inplace=True)
         del population_data["Kunta"]
         communities = pd.merge(population_data, communities, left_index=True, right_index=True)
         communities["Track_y_n"]=0
-        
+
         return communities
         

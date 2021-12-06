@@ -1,4 +1,3 @@
-from PIL import Image
 import numpy as np
 
 class MapMaker():
@@ -30,7 +29,4 @@ class MapMaker():
             created_map[(x_coord-5):(x_coord+5),(y_coord-5):(y_coord+5),0:2]=100
 
         return created_map,communities
-
-    def make_image(self,created_map):
-        return Image.fromarray(created_map,"RGB")
         

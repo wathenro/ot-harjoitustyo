@@ -4,4 +4,3 @@ class Optimizer():
         pass
     def optimizer(self,created_map,c_on_map,max_track):
         return created_map,c_on_map,max_track
-
