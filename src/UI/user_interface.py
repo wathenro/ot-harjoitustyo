@@ -10,11 +10,17 @@ class UI():
         self.window.title("Railroad Designer")
         self.window.geometry("768x512")
         #Photo by Brian Suman on Unsplash
-        self.train_img = ImageTk.PhotoImage(Image.open("./data/train.jpg"))
+        try:
+            self.train_img = ImageTk.PhotoImage(Image.open("src/data/train.jpg"))
+        except:
+            self.train_img = ImageTk.PhotoImage(Image.open("data/train.jpg"))
         self.train_imglabel = Label(self.window, image=self.train_img)
         self.train_imglabel.place(x=512,y=0)
-
-        self.img = ImageTk.PhotoImage(Image.open("./data/rataverkko.jpg"))
+        
+        try:
+            self.img = ImageTk.PhotoImage(Image.open("src/data/rataverkko.jpg"))
+        except:
+            self.img = ImageTk.PhotoImage(Image.open("data/rataverkko.jpg"))
         self.imglabel = Label(self.window, image=self.img)
         self.imglabel.image=self.img
         self.imglabel.pack(side="left")

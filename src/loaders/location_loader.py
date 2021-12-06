@@ -23,14 +23,19 @@ class LocLoader():
                 =communities[["Latitude","Longitude"]].apply(pd.to_numeric, errors='coerce', axis=1)
             #communities.to_csv("./src/data/communities.csv")
         except:
-            communities=pd.read_csv(".src/data/communities.csv",index_col=0,header=0)
-            print("Wrong track but ok then")
+            try:
+                communities=pd.read_csv("src/data/communities.csv",index_col=0,header=0)
+            except:
+                communities=pd.read_csv("data/communities.csv",index_col=0,header=0)
+            print("Did not get from the web, loaded local.")
         communities=self.population_loader(communities)
         return communities
     
     def population_loader(self,communities):
-
-        population_data=pd.read_csv(".src/data/population.csv",encoding="iso8859_10")
+        try:
+            population_data=pd.read_csv("src/data/population.csv",encoding="iso8859_10")
+        except:
+            population_data=pd.read_csv("data/population.csv",encoding="iso8859_10")
         population_data.set_index(population_data["Kunta"],inplace=True)
         del population_data["Kunta"]
         communities = pd.merge(population_data, communities, left_index=True, right_index=True)
