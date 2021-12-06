@@ -1,7 +1,9 @@
-<img src="https://github.com/wathenro/ot-harjoitustyo/blob/master/Dokumentaatio/pak_ka.jpg" width="750">
+## Pakkauskaavio
 
-#Sekvenssikaavio
-<img src="https://github.com/wathenro/ot-harjoitustyo/blob/master/Dokumentaatio/sekvenssikaavio.jpg" width="750">
+![Sekvenssikaavio](pak_ka.jpg)
+
+## Sekvenssikaavio
+![Sekvenssikaavio](sekvenssikaavio.jpg)
 
 UI käyttöliittymä hakee LocationLoaderin kautta netistä Suomen kunnat sijaintitietoineen ja tiedostosta kuntien asukasmäärät.
 
