@@ -11,7 +11,7 @@ RailwayDesigner on tehty Python versiolla 3.8.5 eikä sitä ole testattu aiemmil
 
 ## Käynnistys
 
-Lataa release-tiedostot ja pura ne
-Siirry ohjelman hakemistoon
-Käynnistä python src/index.py tai python3 src/index.py
-Jos Poetry käytössä toimii myös poetry run invoke start
+-Lataa release-tiedostot ja pura ne
+-Siirry ohjelman hakemistoon
+-Käynnistä python src/index.py tai python3 src/index.py
+-Jos Poetry käytössä toimii myös poetry run invoke start
