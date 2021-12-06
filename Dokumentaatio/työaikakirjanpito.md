@@ -12,6 +12,10 @@
 
 28.11 2h  Pylint asennus, testaus ja korjaus ohjeen mukaan
 
-30.11 8h  Käyttöliittymän uudelleen kirjoitus, piirtää nyt kartat. Tkinter haastava. Pakkauskaavio
+30.11 8h  Käyttöliittymän uudelleen kirjoitus, piirtää nyt kartat. Tkinter haastava. Pakkauskaavio.
 
-Tot. 27h
+5.12. 2h  Suunnittelu
+
+6.12. 8h Hakemistorakenteen täydellinen uusiminen ja tästä seuranneiden ongelmien ratkaisu. Release 1.
+
+Tot. 37h
