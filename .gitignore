@@ -3,10 +3,10 @@
 /laskarit/viikko2/unicafe/src/__pycache__
 /laskarit/viikko2/unicafe/.coverage
 /laskarit/viikko2/unicafe/htmlcov
-/RailwayDesigner/.pytest_cache
-/RailwayDesigner/src/tests/__pycache__
-/RailwayDesigner/src/__pycache__
-/RailwayDesigner/.coverage
-/RailwayDesigner/htmlcov
-/RailwayDesigner/.coveragerc
-/RailwayDesigner/.pylintrc
+/.pytest_cache
+/src/tests/__pycache__
+/src/__pycache__
+/.coverage
+/htmlcov
+/.coveragerc
+/.pylintrc

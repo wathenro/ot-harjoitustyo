@@ -1,9 +1,8 @@
 from tkinter import Label,StringVar,OptionMenu,Button,Entry
-import numpy as np
 from PIL import Image,ImageTk
-from location_loader import LocLoader
-from map_maker import MapMaker
-from optimizer import Optimizer
+from loaders.location_loader import LocLoader
+from loaders.map_maker import MapMaker
+from optimizers.optimizer import Optimizer
 
 class UI():
     def __init__(self,window):

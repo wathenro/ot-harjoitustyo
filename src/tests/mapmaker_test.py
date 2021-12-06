@@ -1,6 +1,7 @@
 import unittest
-from map_maker import MapMaker
-from location_loader import LocLoader
+from loaders.map_maker import MapMaker
+from loaders.location_loader import LocLoader
+
 
 class TestLocLoader(unittest.TestCase):
     def setUp(self):

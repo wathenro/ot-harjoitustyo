@@ -1,5 +1,6 @@
 import unittest
-from location_loader import LocLoader
+from loaders.location_loader import LocLoader
+
 
 class TestLocLoader(unittest.TestCase):
     def setUp(self):

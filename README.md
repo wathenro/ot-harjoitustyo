@@ -1,12 +1,10 @@
-# Harjoitustyö
+## RailwayDesigner
 
-Harjoitustyö RailwayDesigner rautatielinjausten optimointiin löytyy hakemistosta [https://github.com/wathenro/ot-harjoitustyo/tree/master/RailwayDesigner]
+RailwayDesigner auttaa löytämään radanpituuden ja väestökattavuuden kannalta optimaalisen ratalinjauksen kahden kaupungin välille. Optimaalisen linjauksen löydyttyä tästä on mahdollista luoda ja tallentaa raportti. Saatu linjaus voidaan myös tallentaa tietokantaan.
 
-Harjoitustyön readme.md: [https://github.com/wathenro/ot-harjoitustyo/blob/master/RailwayDesigner/README.md] 
-
-Työaikakirjanpito [https://github.com/wathenro/ot-harjoitustyo/blob/master/RailwayDesigner/Dokumentaatio/ty%C3%B6aikakirjanpito.md]
+RailwayDesigner on tehty Python versiolla 3.8.5 eikä sitä ole testattu aiemmilla versioilla.
 
 
-
-
-
+- [Vaatimusmäärittely](./Dokumentaatio/vaatimusmäärittely.md)
+- [Arkkitehtuurikuvaus](./Dokumentaatio/arkkitehtuuri.md)
+- [Työaikakirjanpito](./Dokumentaatio/työaikakirjanpito.md)
