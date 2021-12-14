@@ -2,27 +2,27 @@ import numpy as np
 
 class MapMaker():
     """Class for creation of the map of cities between start and end stations
-    
     """
     def __init__(self):
         """Constructor
+
         """
         self.start_station=""
         self.end_station=""
-     
+
     def make_map(self,start_station,end_station,communities):
-        """Finds the cities between endstations and puts them on a map 
+        """Finds the cities between endstations and puts them on a map
            that is a numpy-grid.
-        
+
         Args:
             start_station: Start city for the railway line
             end_station: End city for the railway line
             communities: Pandas-dataframe with all cities
-        
+
         Returns:
             created_map: numpy-array with cities in correct locations
             communities: communities on map
-           
+
         """
         start_x,start_y,end_x,end_y,x_scale,y_scale=\
             self.get_scaling(communities,start_station,end_station)
@@ -39,11 +39,10 @@ class MapMaker():
             y_raw=(row["Latitude"]-start_y)/y_scale
             x_coord=int(100+x_raw*400)
             y_coord=int(500-y_raw*400)
-            print(x_coord,y_coord,index)
 
             created_map[(y_coord-5):(y_coord+5),(x_coord-5):(x_coord+5),0:2]=100
             if index=="Helsinki":
-                created_map[(y_coord-5):(y_coord+5),(x_coord-5):(x_coord+5),0:2]=210
+                created_map[(y_coord-5):(y_coord+5),(x_coord-5):(x_coord+5),0:2]=0
 
         return created_map,communities
 
@@ -56,5 +55,4 @@ class MapMaker():
         y_scale=abs(start_y-end_y)
 
         return start_x,start_y,end_x,end_y,x_scale,y_scale
-
         

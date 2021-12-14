@@ -18,4 +18,8 @@
 
 6.12. 8h Hakemistorakenteen täydellinen uusiminen ja tästä seuranneiden ongelmien ratkaisu. Release 1.
 
-Tot. 37h
+13.12. 6h Optimizer
+
+14.12. 8h Reitin piirto. Release 2.
+
+Tot. 51h
