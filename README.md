@@ -8,6 +8,7 @@ RailwayDesigner on tehty Python versiolla 3.8.5 eikä sitä ole testattu aiemmil
 - [Vaatimusmäärittely](./Dokumentaatio/vaatimusmäärittely.md)
 - [Arkkitehtuurikuvaus](./Dokumentaatio/arkkitehtuuri.md)
 - [Työaikakirjanpito](./Dokumentaatio/työaikakirjanpito.md)
+- [Käyttöohje](./Dokumentaatio/kayttoohje.md)
 
 ## Käynnistys
 
