@@ -4,6 +4,8 @@ from random import choice
 
 from haversine import haversine
 
+from loaders.map_maker import MapMaker
+
 class Optimizer():
     def __init__(self):
         pass
@@ -15,7 +17,7 @@ class Optimizer():
         valid_tracks={}
         
         track=start_station+"-"
-        for i in range(1,1000000):
+        for i in range(1,1000):
             flag=0
             chosen_stops=[]
             track_length=0
@@ -50,6 +52,8 @@ class Optimizer():
             if valid_tracks[track][0]>max_pop:
                 max_pop=valid_tracks[track][0]
                 best_track=track
+        
+        created_map=self.draw_map(created_map,c_on_map,best_track,start_station,end_station)
 
         if best_track!="":
             return created_map,c_on_map,valid_tracks[best_track][1],\
@@ -70,3 +74,33 @@ class Optimizer():
                     (c_on_map["Latitude"][other_city_name],\
                     c_on_map["Longitude"][other_city_name]))
         return distance_matrix
+
+    def draw_map(self,created_map,c_on_map,best_track,start_station,end_station):
+        track_cities=best_track.split("-")
+        first_city=track_cities.pop(0)
+        print(track_cities,first_city)
+        start_x,start_y,end_x,end_y,x_scale,y_scale=\
+            MapMaker().get_scaling(c_on_map,start_station,end_station)
+        for city in track_cities:
+            second_city=city
+            
+            x_raw_first=(c_on_map["Longitude"][first_city]-start_x)/x_scale
+            y_raw_first=(c_on_map["Latitude"][first_city]-start_y)/y_scale
+            x_coord_first=int(100+x_raw_first*400)
+            y_coord_first=int(500-y_raw_first*400)
+
+            x_raw_second=(c_on_map["Longitude"][second_city]-start_x)/x_scale
+            y_raw_second=(c_on_map["Latitude"][second_city]-start_y)/y_scale
+            x_coord_second=int(100+x_raw_second*400)
+            y_coord_second=int(500-y_raw_second*400)
+            print(x_coord_first,y_coord_first,"-",x_coord_second,y_coord_second)
+            slope=(y_coord_first-y_coord_second)/(x_coord_first-x_coord_second)
+            print(slope)
+            for x_draw in range(0,abs(x_coord_first-x_coord_second)):
+                y_draw=int(max(y_coord_first,y_coord_second)+slope*x_draw)
+                created_map[min(511,y_draw),min(511,min(x_coord_first,x_coord_second)+x_draw),0:2]=158
+                print(y_draw,x_draw)
+
+            first_city=second_city
+
+        return created_map

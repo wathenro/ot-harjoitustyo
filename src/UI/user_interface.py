@@ -84,9 +84,6 @@ class UI():
 
         self.make_report_button=Button(self.window, text='Make report', command=self.design, width=10)
         self.make_report_button.place(x=550,y=380)
-
-        self.opt_track_label=Label(self.window,text="No track yet")
-        self.opt_track_label.place(x=10,y=490)
     
     def design(self):
         """Calls mapmaker,then optimizer, then image maker
