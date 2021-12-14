@@ -1,11 +1,29 @@
 import numpy as np
 
 class MapMaker():
+    """Class for creation of the map of cities between start and end stations
+    
+    """
     def __init__(self):
+        """Constructor
+        """
         self.start_station=""
         self.end_station=""
+     
     def make_map(self,start_station,end_station,communities):
-
+        """Finds the cities between endstations and puts them on a map 
+           that is a numpy-grid.
+        
+        Args:
+            start_station: Start city for the railway line
+            end_station: End city for the railway line
+            communities: Pandas-dataframe with all cities
+        
+        Returns:
+            created_map: numpy-array with cities in correct locations
+            communities: communities on map
+           
+        """
         start_x=min(communities["Longitude"][start_station],communities["Longitude"][end_station])
         start_y=min(communities["Latitude"][start_station],communities["Latitude"][end_station])
         end_x=max(communities["Longitude"][start_station],communities["Longitude"][end_station])
