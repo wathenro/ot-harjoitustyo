@@ -22,7 +22,7 @@ class LocLoader():
             communities[["Latitude","Longitude"]]\
                 =communities[["Latitude","Longitude"]].apply(pd.to_numeric, errors='coerce', axis=1)
             #communities.to_csv("./src/data/communities.csv")
-        except Exception:
+        except requests.exceptions.RequestException:
             try:
                 communities=pd.read_csv("src/data/communities.csv",index_col=0,header=0)
             except FileNotFoundError:
@@ -37,7 +37,7 @@ class LocLoader():
         except FileNotFoundError:
             population_data=pd.read_csv("data/population.csv",encoding="iso8859_10")
         population_data.set_index(population_data["Kunta"],inplace=True)
-        del population_data["Kunta"]
+        population_data.drop(columns="Kunta",inplace=True)
         communities = pd.merge(population_data, communities, left_index=True, right_index=True)
         communities["Track_y_n"]=0
 

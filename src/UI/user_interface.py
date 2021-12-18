@@ -22,14 +22,14 @@ class UI():
         #Photo by Brian Suman on Unsplash
         try:
             self.train_img = ImageTk.PhotoImage(Image.open("src/data/train.jpg"))
-        except:
+        except FileNotFoundError:
             self.train_img = ImageTk.PhotoImage(Image.open("data/train.jpg"))
         self.train_imglabel = Label(self.window, image=self.train_img)
         self.train_imglabel.place(x=512,y=0)
         
         try:
             self.img = ImageTk.PhotoImage(Image.open("src/data/rataverkko.jpg"))
-        except:
+        except FileNotFoundError:
             self.img = ImageTk.PhotoImage(Image.open("data/rataverkko.jpg"))
         self.imglabel = Label(self.window, image=self.img)
         self.imglabel.image=self.img
@@ -117,7 +117,7 @@ class UI():
         Args:
             created_map: A numpy array with cities and track
         """
-        map_image=Image.fromarray(created_map,"RGB")
+        map_image=Image.fromarray(created_map,mode="RGB")
         self.img = ImageTk.PhotoImage(map_image)
         self.imglabel.configure(image=self.img)
         self.imglabel.image=self.img

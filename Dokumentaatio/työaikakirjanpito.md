@@ -22,4 +22,6 @@
 
 14.12. 8h Reitin piirto. Release 2.
 
-Tot. 51h
+18.12. 3h Reitin piirto toimii oikein. Lintin avulla siivottu koodi.
+
+Tot. 54h

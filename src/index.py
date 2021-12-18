@@ -2,7 +2,6 @@ from tkinter import Tk
 from UI.user_interface import UI
 
 def main():
-
     window = Tk()
     UI(window)
     window.mainloop()
