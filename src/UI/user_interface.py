@@ -2,6 +2,7 @@ from tkinter import Label,StringVar,OptionMenu,Button,Entry
 from PIL import Image,ImageTk
 from loaders.location_loader import LocLoader
 from loaders.map_maker import MapMaker
+from loaders.report_maker import ReportMaker
 from optimizers.optimizer import Optimizer
 
 class UI():
@@ -37,54 +38,63 @@ class UI():
 
         self.communities=LocLoader().location_loader()
 
+        self.label_choose=Label(self.window,text="Choose start and end stations:")
+        self.label_choose.place(x=550,y=150)
+
         self.startCityMenu = StringVar()
         self.startCityMenu.set("Helsinki")
         startMenu = OptionMenu(self.window, self.startCityMenu,*self.communities.index.tolist())
-        startMenu.place(x=550,y=100)
+        startMenu.config(bg="GREEN")
+        startMenu.place(x=550,y=175)
 
         self.endCityMenu = StringVar()
         self.endCityMenu.set("Porvoo")
         endMenu = OptionMenu(self.window, self.endCityMenu,*self.communities.index.tolist())
-        endMenu.place(x=650,y=100)
+        endMenu.config(bg="RED")
+        endMenu.place(x=650,y=175)
 
-        self.sign_max_track=Label(self.window,text="Maximum track length")
-        self.sign_max_track.place(x=550,y=150)
+        self.sign_max_track=Label(self.window,text="Type max track length and click Design")
+        self.sign_max_track.place(x=550,y=215)
 
         self.max_track_box=Entry(self.window)
         self.max_track_box.insert(0, 1000)
-        self.max_track_box.place(x=550,y=175)
+        self.max_track_box.place(x=550,y=240)
 
         design_button=Button(self.window, text='Design', command=self.design, width=10)
-        design_button.place(x=550,y=200)
-        
+        design_button.config(bg="BLUE")
+        design_button.place(x=550,y=265)
+
+        self.result_label=Label(self.window,text="RESULTS:")
+        self.result_label.place(x=550,y=310)        
+
+
         self.opt_max_track=Label(self.window,text="Optimized track length")
-        self.opt_max_track.place(x=550,y=225)
+        self.opt_max_track.place(x=550,y=325)
 
         self.opt_track_length=0 
         self.opt_track_box=Entry(self.window)
         self.opt_track_box.insert(0, self.opt_track_length)
-        self.opt_track_box.place(x=550,y=250)
+        self.opt_track_box.place(x=550,y=350)
 
         self.opt_pop_label=Label(self.window,text="Optimized max population")
-        self.opt_pop_label.place(x=550,y=275)
+        self.opt_pop_label.place(x=550,y=375)
 
         self.opt_pop=0 
         self.opt_pop_box=Entry(self.window)
         self.opt_pop_box.insert(0, self.opt_pop)
-        self.opt_pop_box.place(x=550,y=300)
+        self.opt_pop_box.place(x=550,y=400)
 
+        self.make_report_button=Button(self.window, text='Make report', command=self.make_report, width=10)
+        self.make_report_button.config(bg="YELLOW")
+        self.make_report_button.place(x=550,y=440)
+ 
+    def make_report(self):
+        """Calls make_pdf_report
+        
+        """
+        self.map_image.save("temp_track_pic.jpg")
+        ReportMaker().make_pdf_report(self.track,self.opt_pop,self.opt_track_length)
 
-
-
-        self.save_track_button=Button(self.window, text='Save track', command=self.design, width=10)
-        self.save_track_button.place(x=550,y=350)
-
-        self.load_track_button=Button(self.window, text='Load track', command=self.design, width=10)
-        self.load_track_button.place(x=650,y=350)
-
-        self.make_report_button=Button(self.window, text='Make report', command=self.design, width=10)
-        self.make_report_button.place(x=550,y=380)
-    
     def design(self):
         """Calls mapmaker,then optimizer, then image maker
         
@@ -117,8 +127,8 @@ class UI():
         Args:
             created_map: A numpy array with cities and track
         """
-        map_image=Image.fromarray(created_map,mode="RGB")
-        self.img = ImageTk.PhotoImage(map_image)
+        self.map_image=Image.fromarray(created_map,mode="RGB")
+        self.img = ImageTk.PhotoImage(self.map_image)
         self.imglabel.configure(image=self.img)
         self.imglabel.image=self.img
          

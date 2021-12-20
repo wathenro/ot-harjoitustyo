@@ -24,4 +24,8 @@
 
 18.12. 3h Reitin piirto toimii oikein. Lintin avulla siivottu koodi.
 
-Tot. 54h
+19.12. 2h FPDF kirjastoon tutustuminen
+
+20.12. 6h Käyttöliittymän viimeistely. Raportintekijän koodi.
+
+Tot. 60h

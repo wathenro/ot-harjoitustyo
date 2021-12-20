@@ -15,6 +15,7 @@ invoke = "^1.6.0"
 pylint = "^2.12.2"
 coverage = "^6.2"
 haversine = "^2.5.1"
+fpdf = "^1.7.2"
 
 [tool.poetry.dev-dependencies]
 pytest = "^6.2.5"

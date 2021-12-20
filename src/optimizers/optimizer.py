@@ -10,13 +10,30 @@ class Optimizer():
     def __init__(self):
         pass
     def optimizer(self,start_station,end_station,created_map,c_on_map,max_track):
+        """Finds the track with largest population along it that has a length as
+        close to the user-defined maximum track length as possible
+        
+        Args:
+            start_station: start station for the track
+            end_station: end station for the track
+            created_map: np.array map template
+            c_on_map: pandas dataframe with communities that are on the map
+            max_track: track length
+
+        Returns:
+            created_map: np.array with the optimized track marked
+            c_on_map: communities on the map
+            valid_tracks[best_track][1]: optimized track length
+            valid_tracks[best_track][0]: optimized max population
+            best_track: optimized train route
+        """
         distance_matrix=self.get_distance_matrix(c_on_map)
         stops=list(distance_matrix.index)
         stops.remove(start_station)
         valid_tracks={}
         track=start_station+"-"
 
-        for _ in range(1,10000):
+        for _ in range(1,100000):
             flag=0
             chosen_stops=[]
             track_length=0
@@ -51,7 +68,7 @@ class Optimizer():
                 max_pop=track[1][0]
                 best_track=track[0]
 
-        created_map=self.draw_map(created_map,c_on_map,best_track,start_station,end_station)
+        created_map=MapMaker().draw_track(created_map,c_on_map,best_track,start_station,end_station)
 
         if best_track!="":
             return created_map,c_on_map,valid_tracks[best_track][1],\
@@ -60,6 +77,18 @@ class Optimizer():
         return created_map,c_on_map,0,0,""
 
     def get_distance_matrix(self,c_on_map):
+        """Calculates distances between communities on the map using haversine
+           library. Distances are put in a pandas dataframe
+
+        Args:
+            c_on_map: pandas dataframe with position coordinates for the cities on
+            the map
+
+        Returns:
+            distance_matrix: pandas dataframe that has the cities as column names
+            and indecies where column-index pair has the distance between the cities
+            in kilometers
+        """
         distance_matrix=pd.DataFrame(np.zeros((c_on_map.shape[0],c_on_map.shape[0]))\
             ,index=c_on_map.index,columns=c_on_map.index)
         for city_name in distance_matrix.index:
@@ -70,38 +99,3 @@ class Optimizer():
                     (c_on_map["Latitude"][other_city_name],\
                     c_on_map["Longitude"][other_city_name]))
         return distance_matrix
-
-    def draw_map(self,created_map,c_on_map,best_track,start_station,end_station):
-        track_cities=best_track.split("-")
-        first_city=track_cities.pop(0)
-        start_x,start_y,_,_,x_scale,y_scale=\
-            MapMaker().get_scaling(c_on_map,start_station,end_station)
-        for city in track_cities:
-            second_city=city
-
-            x_raw_first=(c_on_map["Longitude"][first_city]-start_x)/x_scale
-            y_raw_first=(c_on_map["Latitude"][first_city]-start_y)/y_scale
-            x_coord_first=int(x_raw_first*400)
-            y_coord_first=int(y_raw_first*400)
-
-            x_raw_second=(c_on_map["Longitude"][second_city]-start_x)/x_scale
-            y_raw_second=(c_on_map["Latitude"][second_city]-start_y)/y_scale
-            x_coord_second=int(x_raw_second*400)
-            y_coord_second=int(y_raw_second*400)
-
-            try:
-                slope=(y_coord_second-y_coord_first)/(x_coord_second-x_coord_first)
-            except ZeroDivisionError:
-                slope=100
-
-            for x_draw in range(0,abs(x_coord_first-x_coord_second)):
-                x_point=100+min(x_coord_first,x_coord_second)+x_draw
-                if x_coord_first<x_coord_second:
-                    y_point=int(500-y_coord_first-slope*x_draw)
-                else:
-                    y_point=int(500-y_coord_second-slope*x_draw)
-                created_map[y_point,(x_point-5):(x_point+1),0:3]=0
-
-            first_city=second_city
-
-        return created_map

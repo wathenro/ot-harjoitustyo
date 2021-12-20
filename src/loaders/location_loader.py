@@ -2,11 +2,25 @@ import pandas as pd
 import requests
 
 class LocLoader():
+    """Data loader class
+    
+    Args:
+        None
+    """
 
     def __init__(self):
         self.load_successful=False
 
     def location_loader(self):
+        """Downloads Finlands communities from Wikipedia or alternatively file.
+        
+        Attributes:
+            None
+
+        Returns:
+            communities: pandas dataframe with communities as index, longitude,
+            latitude and population as columns    
+        """
 
         try:
             finnish_communities=\
@@ -32,6 +46,15 @@ class LocLoader():
         return communities
 
     def population_loader(self,communities):
+        """Gets population data from file.
+        
+        Attributes:
+            communities: pandas dataframe with Finnish communities
+
+        Returns:
+            communities: pandas dataframe injected as attribute with 
+            added population data
+        """
         try:
             population_data=pd.read_csv("src/data/population.csv",encoding="iso8859_10")
         except FileNotFoundError:

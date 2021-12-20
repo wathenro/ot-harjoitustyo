@@ -14,3 +14,4 @@
 /htmlcov
 /.coveragerc
 /.pylintrc
+/src/data/reports
