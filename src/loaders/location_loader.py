@@ -56,13 +56,13 @@ class LocLoader():
             added population data
         """
         try:
-            population_data=pd.read_csv("src/data/population.csv",encoding="iso8859_10")
+            population_data=pd.read_csv("src/data/population.csv",encoding="utf-8")
         except FileNotFoundError:
-            population_data=pd.read_csv("data/population.csv",encoding="iso8859_10")
+            population_data=pd.read_csv("data/population.csv",encoding="utf-8")
         population_data.set_index(population_data["Kunta"],inplace=True)
         population_data.drop(columns="Kunta",inplace=True)
         communities = pd.merge(population_data, communities, left_index=True, right_index=True)
-        communities["Track_y_n"]=0
+        #communities["Track_y_n"]=0
 
         return communities
         

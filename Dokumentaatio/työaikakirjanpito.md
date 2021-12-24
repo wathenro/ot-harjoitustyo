@@ -28,6 +28,6 @@
 
 20.12. 6h Käyttöliittymän viimeistely. Raportintekijän koodi.
 
-24.12. 3h Dokumentaation viimeistely.
+24.12. 5h Dokumentaation viimeistely. Location_loaderista bugin korjaus.
 
-Tot. 60h
+Tot. 65h
