@@ -11,7 +11,7 @@ Sovellusta voi tässä vaiheessa käyttää kuka tahansa eikä käyttäjiä mite
 ## Käyttöliittymäluonnos
 
 Sovelluksella on yksi näkymä.
-<img src="https://github.com/wathenro/ot-harjoitustyo/blob/master/RailwayDesigner/Dokumentaatio/kayttoliittyma.jpg" width="750">
+![](kayttoliittyma.jpg)
 
 
 ## Perusversion tarjoama toiminnallisuus
