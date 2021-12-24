@@ -1,5 +1,5 @@
-from fpdf import FPDF
 import os
+from fpdf import FPDF
 
 class ReportMaker():
     """PDF report making class
@@ -20,7 +20,7 @@ class ReportMaker():
             length: Length of the optimized track
 
         Returns:
-            Nothing 
+            Nothing
         """
         pdf = FPDF()
         pdf.add_page()

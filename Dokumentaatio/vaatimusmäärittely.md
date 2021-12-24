@@ -2,7 +2,7 @@
 
 ## Tarkoitus
 
-RailwayDesigner auttaa löytämään radanpituuden ja väestökattavuuden kannalta optimaalisen ratalinjauksen kahden kaupungin välille. Optimaalisen linjauksen löydyttyä tästä on mahdollista luoda ja tallentaa raportti. Saatu linjaus voidaan myös tallentaa tietokantaan.
+RailwayDesigner auttaa löytämään radanpituuden ja väestökattavuuden kannalta optimaalisen ratalinjauksen kahden kaupungin välille. Optimaalisen linjauksen löydyttyä tästä on mahdollista tallentaa PDF-raportti. 
 
 ## Käyttäjät
 
@@ -10,16 +10,18 @@ Sovellusta voi tässä vaiheessa käyttää kuka tahansa eikä käyttäjiä mite
 
 ## Käyttöliittymäluonnos
 
-Sovelluksella on tässä vaiheessa vain yksi näkymä. Lisäksi raportti avataan luonnin jälkeen omaan ikkunaansa.
-<img src="https://github.com/wathenro/ot-harjoitustyo/blob/master/RailwayDesigner/Dokumentaatio/kayttoliittymaluonnos.jpg" width="750">
+Sovelluksella on yksi näkymä.
+<img src="https://github.com/wathenro/ot-harjoitustyo/blob/master/RailwayDesigner/Dokumentaatio/kayttoliittyma.jpg" width="750">
 
 
 ## Perusversion tarjoama toiminnallisuus
 
-Perusversio lataa jonkun kovakoodatun kartan paikkakunta, etäisyys ja väestötietoineen todennäköisesti Pythonin dictionaryksi. Kartta näytetää ruudulla ja mahdolliset asemapaikkakunnat alasvetovalikoissa. Määrittämällä radan pituus lasketaan optimaalinen reitti lähdöstä pääteasemalle ja näytetään se kartalla. Hyvän linjauksen löydyttyä se voidaan tallentaa ja ladata uudestaan. Siitä saa myös tehtyä raportin.
+Ohjelma lukee wikipediasta Suomen kunnat sijainteineen, sekä tiedostosta näiden kuntien asukasluvut. Alasvetovalikoista voidaan valita lähtö- ja pääteasemat. Maksimi radanpituus syötetään tekstikenttään. Näistä määritellään mahdollisimman lähellä annettua radan pituutta olevat reitti, jonka asukasmäärä on mahdollisimman suuri. Reittilinjauksesta piirretään kartta, josta saa käsityksen sen kulusta. Hyvän linjauksen löydyttyä siitä voidaan tehdä PDF-raportti.
 
 ## Jatkokehitysideoita
 
-Kartta ei ole kovakoodattu vaan sen voi valita haluamakseen.
-Web-versio
-Mäkisyys ja muut maston muodot, ratakilometrin hinta missäkin maastossa
+Optimointi perustuu suureen määrään satunnaisia hakuja. Tämä voidaan optimoida tekemällä siitä syvyyshaku. Sama asukasmäärä voidaan saavuttaa myös eri pituisilla ratalinjauksilla, nykyinen algoritmi ei valitse näistä lyhyintä vaan sen joka on lähimpänä annettua maksimipituutta.
+
+Ohjelma voi tehdä visuaalisesti huomattavasti selkeämmän, jos se piirtäisi ratalinjaukset tyhjän taustan sijaan olemassa olevalle kartalle. Tämä on täysin toteutettavissa.
+
+Tehdyt radat tulisi voida tallettaa tietokantaan josta niitä voisi tarpeen tullen hakea. Toinen vaihtoehto on oma tiedosto. Esimerkiksi raporttirakenteen hyvin määrittelemällä ohjelma voisi lukea ne suoraan tehdyistä raporteistakin.

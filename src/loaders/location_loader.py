@@ -3,7 +3,7 @@ import requests
 
 class LocLoader():
     """Data loader class
-    
+
     Args:
         None
     """
@@ -13,13 +13,13 @@ class LocLoader():
 
     def location_loader(self):
         """Downloads Finlands communities from Wikipedia or alternatively file.
-        
+
         Attributes:
             None
 
         Returns:
             communities: pandas dataframe with communities as index, longitude,
-            latitude and population as columns    
+            latitude and population as columns
         """
 
         try:
@@ -35,7 +35,7 @@ class LocLoader():
             del communities["Kunta"]
             communities[["Latitude","Longitude"]]\
                 =communities[["Latitude","Longitude"]].apply(pd.to_numeric, errors='coerce', axis=1)
-            #communities.to_csv("./src/data/communities.csv")
+
         except requests.exceptions.RequestException:
             try:
                 communities=pd.read_csv("src/data/communities.csv",index_col=0,header=0)
@@ -47,12 +47,12 @@ class LocLoader():
 
     def population_loader(self,communities):
         """Gets population data from file.
-        
+
         Attributes:
             communities: pandas dataframe with Finnish communities
 
         Returns:
-            communities: pandas dataframe injected as attribute with 
+            communities: pandas dataframe injected as attribute with
             added population data
         """
         try:

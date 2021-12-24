@@ -28,4 +28,6 @@
 
 20.12. 6h Käyttöliittymän viimeistely. Raportintekijän koodi.
 
+24.12. 3h Dokumentaation viimeistely.
+
 Tot. 60h

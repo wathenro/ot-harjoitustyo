@@ -25,33 +25,33 @@ class UI():
             self.train_img = ImageTk.PhotoImage(Image.open("src/data/train.jpg"))
         except FileNotFoundError:
             self.train_img = ImageTk.PhotoImage(Image.open("data/train.jpg"))
-        self.train_imglabel = Label(self.window, image=self.train_img)
-        self.train_imglabel.place(x=512,y=0)
+        self.train_img_label = Label(self.window, image=self.train_img)
+        self.train_img_label.place(x=512,y=0)
         
         try:
             self.img = ImageTk.PhotoImage(Image.open("src/data/rataverkko.jpg"))
         except FileNotFoundError:
             self.img = ImageTk.PhotoImage(Image.open("data/rataverkko.jpg"))
-        self.imglabel = Label(self.window, image=self.img)
-        self.imglabel.image=self.img
-        self.imglabel.pack(side="left")
+        self.img_label = Label(self.window, image=self.img)
+        self.img_label.image=self.img
+        self.img_label.pack(side="left")
 
         self.communities=LocLoader().location_loader()
 
         self.label_choose=Label(self.window,text="Choose start and end stations:")
         self.label_choose.place(x=550,y=150)
 
-        self.startCityMenu = StringVar()
-        self.startCityMenu.set("Helsinki")
-        startMenu = OptionMenu(self.window, self.startCityMenu,*self.communities.index.tolist())
-        startMenu.config(bg="GREEN")
-        startMenu.place(x=550,y=175)
+        self.start_city_menu = StringVar()
+        self.start_city_menu.set("Helsinki")
+        start_menu = OptionMenu(self.window, self.start_city_menu,*self.communities.index.tolist())
+        start_menu.config(bg="GREEN")
+        start_menu.place(x=550,y=175)
 
-        self.endCityMenu = StringVar()
-        self.endCityMenu.set("Porvoo")
-        endMenu = OptionMenu(self.window, self.endCityMenu,*self.communities.index.tolist())
-        endMenu.config(bg="RED")
-        endMenu.place(x=650,y=175)
+        self.end_city_menu = StringVar()
+        self.end_city_menu.set("Porvoo")
+        end_menu = OptionMenu(self.window, self.end_city_menu,*self.communities.index.tolist())
+        end_menu.config(bg="RED")
+        end_menu.place(x=650,y=175)
 
         self.sign_max_track=Label(self.window,text="Type max track length and click Design")
         self.sign_max_track.place(x=550,y=215)
@@ -99,17 +99,17 @@ class UI():
         """Calls mapmaker,then optimizer, then image maker
         
         """
-        startCityMenu=str(self.startCityMenu.get())
-        endCityMenu=str(self.endCityMenu.get())
+        start_city_menu=str(self.start_city_menu.get())
+        end_city_menu=str(self.end_city_menu.get())
         try:
             max_track=int(self.max_track_box.get())
         except:
             max_track=10000
 
-        created_map,c_on_map=MapMaker().make_map(startCityMenu,endCityMenu,self.communities.copy())
+        created_map,c_on_map=MapMaker().make_map(start_city_menu,end_city_menu,self.communities.copy())
 
         created_map,c_on_map,self.opt_track_length,self.opt_pop,self.track=Optimizer().\
-            optimizer(startCityMenu,endCityMenu,created_map,c_on_map,max_track)
+            optimizer(start_city_menu,end_city_menu,created_map,c_on_map,max_track)
         
         self.opt_track_box.delete(0,40)
         self.opt_track_box.insert(0, self.opt_track_length)
@@ -129,6 +129,6 @@ class UI():
         """
         self.map_image=Image.fromarray(created_map,mode="RGB")
         self.img = ImageTk.PhotoImage(self.map_image)
-        self.imglabel.configure(image=self.img)
-        self.imglabel.image=self.img
+        self.img_label.configure(image=self.img)
+        self.img_label.image=self.img
          

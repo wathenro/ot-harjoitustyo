@@ -82,10 +82,10 @@ class MapMaker():
         y_scale=abs(start_y-end_y)
 
         return start_x,start_y,end_x,end_y,x_scale,y_scale
-    
+
     def draw_track(self,created_map,c_on_map,best_track,start_station,end_station):
         """Renders the optimized track to the map for visulization
-        
+
         Args:
             created_map: np.array where cities and tracks are marked
             c_on_map: pandas dataframe with coordinates for the cities
@@ -95,7 +95,7 @@ class MapMaker():
 
         Returns:
             created_map: np.array with cities and optimized track rendered
-        
+
         """
         track_cities=best_track.split("-")
         first_city=track_cities.pop(0)

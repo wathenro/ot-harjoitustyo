@@ -20,13 +20,12 @@ poetry run invoke start
 Ohjelman käyttöliittymä näyttää tältä:
 ![](kayttoohjekuva.jpg)
 
-* Vihreällä nuolella valitaan lähtöasema
-* Punaisella nuolella pääteasema
-* Sinisen nuolen kohtaan kirjoitetaan maksimi radanpituus
-* Rata optimoidaan mahdollisimman suurelle väkimäärälle painamalla keltaisen nuolen osoittamaa 'Design'-näppäintä
+* Vihreä nuoli osoittaa alasvetovalikkoon josta valitaan lähtöasema
+* Punainen nuoli osoittaa alasvetovalikkoon josta valitaan pääteasema
+* Sinisen nuolen kohtaan kirjoitetaan maksimi radanpituus ja klikataan "Design"
+
+Tämä optimoi radan mahdollisimman suurelle väkimäärälle.
 
 - Saatu tulos näkyy 'Optimized track length'-ruudussa
 
-- 'Save track' tallettaa radan
-- 'Load track' lataa aiemmin tehdyn radan
-- 'Make report' tekee raportin
+* Keltaisen nuolen osoittama 'Make report' tekee PDF-raportin ja tallentaa sen data/reports hakemistoon.

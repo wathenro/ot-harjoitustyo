@@ -12,7 +12,7 @@ class Optimizer():
     def optimizer(self,start_station,end_station,created_map,c_on_map,max_track):
         """Finds the track with largest population along it that has a length as
         close to the user-defined maximum track length as possible
-        
+
         Args:
             start_station: start station for the track
             end_station: end station for the track
