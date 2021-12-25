@@ -30,4 +30,6 @@
 
 24.12. 5h Dokumentaation viimeistely. Location_loaderista bugin korjaus.
 
-Tot. 65h
+25.12. 5h Testien viimeistely ja testaus. Loppupalautus-release.
+
+Tot. 72h
