@@ -62,7 +62,6 @@ class LocLoader():
         population_data.set_index(population_data["Kunta"],inplace=True)
         population_data.drop(columns="Kunta",inplace=True)
         communities = pd.merge(population_data, communities, left_index=True, right_index=True)
-        #communities["Track_y_n"]=0
 
         return communities
         
